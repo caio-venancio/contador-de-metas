@@ -2,6 +2,7 @@ __pycache__/
 .pyc
 .venv/
 
-.todo-16112025
+# todos os arquivos que começarem com .todo serão ignorados
+.todo*
 
 Novo Documento.txt
