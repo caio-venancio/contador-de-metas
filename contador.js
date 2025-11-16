@@ -18,7 +18,7 @@ const askQuestion = (question) => {
 
 // read the text and split it on new lines
 // const lines = fs.readFileSync("todo-18012025" + ".txt").toString().split("\r\n");
-const lines = fs.readFileSync("todo-20102025" + ".txt").toString().split("\n");
+const lines = fs.readFileSync(".todo-16112025" + ".txt").toString().split("\n");
 // const lines = fs.readFileSync("Novo Documento" + ".txt").toString().split("\n");
 
 // All of the parse topics
@@ -103,6 +103,7 @@ const regexNovaMeta = /^[ \t]*-.*/;
 
     rl.close()
     console.log(oldchanges)
+    console.log("-" + contadorConclusao + "-" + contadorNovaMeta + "-")
 })();
 
 
