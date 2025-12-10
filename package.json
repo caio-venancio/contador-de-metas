@@ -1,0 +1,26 @@
+{
+  "name": "contador-de-metas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "contador.js",
+  "type": "module",
+  "files": [
+    "contador.js"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caio-venancio/contador-de-metas.git"
+  },
+  "author": "Caio Venâncio",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/caio-venancio/contador-de-metas/issues"
+  },
+  "homepage": "https://github.com/caio-venancio/contador-de-metas#readme",
+  "dependencies": {
+    "contador-de-metas": "^1.0.0"
+  }
+}

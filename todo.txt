@@ -1,3 +1,9 @@
 - [] Fazer ele gerar proximo documento com data certa
 - [] Fazer documento de config
-- [] Criar pacote NPM
+- [X] Criar pacote NPM
+    - [X] Pegar ordem de comandos
+        npm pack, npm login, npm publish --access public
+    - [X] Testar se funcionou
+        abrir https://www.npmjs.com/package/contador-de-metas
+        npm view contador-de-metas
+        npm install contador-de-metas
