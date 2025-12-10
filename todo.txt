@@ -7,3 +7,8 @@
         abrir https://www.npmjs.com/package/contador-de-metas
         npm view contador-de-metas
         npm install contador-de-metas
+- [] Adicionar README
+    - [X] Criar documento
+    - [] Preencher documento com tópicos
+- [] Ver se já funciona na pasta
+- [] Colocar CI/CD para publicar toda vez que tiver pr na main
