@@ -1,0 +1,3 @@
+- [] Fazer ele gerar proximo documento com data certa
+- [] Fazer documento de config
+- [] Criar pacote NPM
