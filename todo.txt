@@ -1,4 +1,5 @@
 - [] Fazer ele gerar proximo documento com data certa
+- [] Fazer ele adicionar a contabilização no próximo documento
 - [] Fazer documento de config
 - [X] Criar pacote NPM
     - [X] Pegar ordem de comandos

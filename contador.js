@@ -1,16 +1,14 @@
-// import dependecies
 const fs = require("fs");
 const readline = require("readline");
 
-const rl = readline.createInterface({
+const userInput = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
 });
 
-// Cria uma função que retorna uma Promise para perguntar algo ao usuário
 const askQuestion = (question) => {
     return new Promise((resolve) => {
-      rl.question(question, (answer) => {
+      userInput.question(question, (answer) => {
         resolve(answer);
       });
     });
@@ -101,7 +99,7 @@ const regexNovaMeta = /^[ \t]*-.*/;
         fs.writeFileSync('Novo Documento' + '.txt', txt)
     }
 
-    rl.close()
+    userInput.close()
     console.log(oldchanges)
     console.log("-" + contadorConclusao + "-" + contadorNovaMeta + "-")
 })();
