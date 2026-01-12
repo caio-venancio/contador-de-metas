@@ -36,8 +36,8 @@ async function findFile() {
       }
     })
   
- const oldestString = dates.reduce((oldest, current) => {
-    return parseDate(current) < parseDate(oldest) ? current : oldest;
+ const oldestString = dates.reduce((newest, current) => {
+    return parseDate(current) > parseDate(newest) ? current : newest;
   });
 
   return oldestString;
