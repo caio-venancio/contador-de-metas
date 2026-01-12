@@ -6,6 +6,7 @@ import readline from "readline"
 import { isValidDDMMYYYY } from "./date.js";
 import { extractDateDDMMYYYY } from "./date.js";
 import { readFiles } from "./io.js";
+import { parseDate } from "./date.js";
 
 const userInput = readline.createInterface({
   input: process.stdin,
