@@ -1,6 +1,11 @@
+Dev
 - [] Fazer ele gerar proximo documento com data certa
-- [] Fazer ele adicionar a contabilização no próximo documento
+- [X] Fazer ele adicionar a contabilização no próximo documento
 - [] Fazer documento de config
+
+
+
+DevOps
 - [X] Criar pacote NPM
     - [X] Pegar ordem de comandos
         npm pack, npm login, npm publish --access public
@@ -13,3 +18,10 @@
     - [] Preencher documento com tópicos
 - [] Ver se já funciona na pasta
 - [] Colocar CI/CD para publicar toda vez que tiver pr na main
+- [] Escrever testes para testar comportamentos
+- [X] Ver como ver a versão
+    npm version
+- [X] Ver como adicionar a versão
+    npm version patch
+    npm version minor
+    npm version major
