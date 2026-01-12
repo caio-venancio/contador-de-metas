@@ -22,5 +22,8 @@
   "homepage": "https://github.com/caio-venancio/contador-de-metas#readme",
   "dependencies": {
     "contador-de-metas": "^1.0.0"
+  },
+  "bin": {
+    "contador": "./contador.js"
   }
 }

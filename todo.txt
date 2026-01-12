@@ -16,7 +16,8 @@ DevOps
 - [] Adicionar README
     - [X] Criar documento
     - [] Preencher documento com tópicos
-- [] Ver se já funciona na pasta
+- [X] Ver se já funciona na pasta
+    tive que adicionar bin e shebang
 - [] Colocar CI/CD para publicar toda vez que tiver pr na main
 - [] Escrever testes para testar comportamentos
 - [X] Ver como ver a versão
