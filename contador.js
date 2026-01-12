@@ -44,6 +44,7 @@ const regexNovaMeta = /^[ \t]*-.*/;
 // linhas que começam com traços mas pode ter tabulações ou espaços antes.
 
 (async () => {
+
     for(let i = 0; i<lines.length; i+=1){
         if(lines[i].match(regexNovaMeta)){
             oldchanges.push(lines[i])
@@ -52,6 +53,7 @@ const regexNovaMeta = /^[ \t]*-.*/;
         }
     }
     console.log(contadorNovaMeta, "novas metas ontem.")
+
     const resposta1 = await askQuestion("Deseja continuar?")
 
     let updatedLines
@@ -78,6 +80,7 @@ const regexNovaMeta = /^[ \t]*-.*/;
         }
     }
     console.log(contadorConclusao, "concluídos ontem.")
+    
     const resposta2 = await askQuestion("Deseja continuar?")
 
     if(resposta2 == 1 && resposta2 == 1){
