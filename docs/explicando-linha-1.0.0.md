@@ -114,6 +114,11 @@ const regexNovaMeta = /^[ \t]*-.*/;
     }
 ```
 
+Primeiro, verifica a resposta do usuário em resposta1 e resposta2 (seria bom trocar para nomes mais intuitivos).
+updatedLines é uma variável no escopo da função asíncrona. então ele usa o método .map para que em cada linha ele:
+regexconclusão.test() testa a regex e adiciona em new changes e retorna substítuido. ou retorna normal se não for diferentes
+por fim ele junta as linhas em \n e depois escreve com .txt
+
 ```
 //({...
 

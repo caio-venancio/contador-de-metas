@@ -1,6 +1,6 @@
 Dev
 - [] Fazer ele gerar proximo documento com data certa
-- [] Fazer ele adicionar a contabilização no próximo documento
+- [X] Fazer ele adicionar a contabilização no próximo documento
 - [] Fazer documento de config
 
 

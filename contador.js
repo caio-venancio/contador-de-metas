@@ -1,5 +1,7 @@
-const fs = require("fs");
-const readline = require("readline");
+// const fs = require("fs");
+// const readline = require("readline");
+import fs from "fs"
+import readline from "readline"
 
 const userInput = readline.createInterface({
   input: process.stdin,
@@ -13,6 +15,9 @@ const askQuestion = (question) => {
       });
     });
   };
+
+//Variáveis de configuração
+const endOfToDo = "Nível atual: "
 
 // read the text and split it on new lines
 // const lines = fs.readFileSync("todo-18012025" + ".txt").toString().split("\r\n");
@@ -96,10 +101,13 @@ const regexNovaMeta = /^[ \t]*-.*/;
             return line;
           });
         // console.log(updatedLines)
+
+        addNovoNivel(updatedLines, contadorConclusao, contadorNovaMeta);
         
-        let txt = updatedLines.join("\n")
-        // console.log(txt)
-        fs.writeFileSync('Novo Documento' + '.txt', txt)
+        let filedata = updatedLines.join("\n")
+        // console.log(filedata, "o texto acima")
+        // console.log(updatedLines, "updatedlines")
+        fs.writeFileSync('Novo Documento' + '.txt', filedata)
     }
 
     userInput.close()
@@ -107,4 +115,31 @@ const regexNovaMeta = /^[ \t]*-.*/;
     console.log("-" + contadorConclusao + "-" + contadorNovaMeta + "-")
 })();
 
+function addNovoNivel(lines, numConclusao, numNovaMeta){
+  for (let i = lines.length - 1; i >= 0; i--) {
+    const line = lines[i];
+
+    if (line.includes(endOfToDo)) {
+      const arrayStringsDoFim = line.match(/\d+/g); //inteiros
+      const arrayNumerosDoFim = arrayStringsDoFim.map(Number);
+
+      // console.log("antes:", lines[i])
+      lines[i] = endOfToDo + (arrayNumerosDoFim[0] + numConclusao) + "-" + (arrayNumerosDoFim[1] + numNovaMeta)
+      // console.log("depois:", lines[i])
+
+      console.log(JSON.stringify(lines[i-1]))
+      // lines[i-1].replace(/\\r/g, ("-" + numConclusao + "-" + numNovaMeta + "-" + '\n'))
+      lines[i-1] = lines[i-1].replace('\r', '') + (" -" + numConclusao + "-" + numNovaMeta + "-")
+      console.log(JSON.stringify(lines[i-1]))
+
+      addProximoDia(lines, i)
+
+      i = -1
+    }
+  }
+}
+
+function addProximoDia(lines, index){
+  lines.splice(index, 0, '')
+}
 
