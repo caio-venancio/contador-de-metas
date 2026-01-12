@@ -5,7 +5,9 @@
   "main": "contador.js",
   "type": "module",
   "files": [
-    "contador.js"
+    "contador.js",
+    "date.js",
+    "io.js"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

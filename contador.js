@@ -3,6 +3,9 @@
 // const readline = require("readline");
 import fs from "fs"
 import readline from "readline"
+import { isValidDDMMYYYY } from "./date.js";
+import { extractDateDDMMYYYY } from "./date.js";
+import { readFiles } from "./io.js";
 
 const userInput = readline.createInterface({
   input: process.stdin,
@@ -19,10 +22,33 @@ const askQuestion = (question) => {
 
 //Variáveis de configuração
 const endOfToDo = "Nível atual: "
+const fileToDoMarker = "todo"
+
+async function findFile() {
+  let files = await readFiles();
+  let dates = files.filter(file =>{
+      if(file.includes(fileToDoMarker)){
+        const date = extractDateDDMMYYYY(file)
+        if(isValidDDMMYYYY(date)){
+          return true
+        }
+      }
+    })
+  
+ const oldestString = dates.reduce((oldest, current) => {
+    return parseDate(current) < parseDate(oldest) ? current : oldest;
+  });
+
+  return oldestString;
+}
+
+let file = await findFile();
+
+console.log("Seria", file, "o arquivo certo?")
 
 // read the text and split it on new lines
 // const lines = fs.readFileSync("todo-18012025" + ".txt").toString().split("\r\n");
-const lines = fs.readFileSync(".todo-16112025" + ".txt").toString().split("\n");
+const lines = fs.readFileSync(`${file}`).toString().split("\n");
 // const lines = fs.readFileSync("Novo Documento" + ".txt").toString().split("\n");
 
 // All of the parse topics
