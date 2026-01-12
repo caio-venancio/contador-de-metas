@@ -19,3 +19,9 @@ DevOps
 - [] Ver se já funciona na pasta
 - [] Colocar CI/CD para publicar toda vez que tiver pr na main
 - [] Escrever testes para testar comportamentos
+- [X] Ver como ver a versão
+    npm version
+- [X] Ver como adicionar a versão
+    npm version patch
+    npm version minor
+    npm version major
