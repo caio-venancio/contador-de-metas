@@ -147,6 +147,14 @@ function addNovoNivel(lines, numConclusao, numNovaMeta){
   for (let i = lines.length - 1; i >= 0; i--) {
     const line = lines[i];
 
+    if(i == lines.length-11){ //não é eficiente, já que testa sempre
+      console.log("Final do arquivo não tem endOfToDo definido.")
+    }
+
+    if(i == 0){ //não é eficiente, já que testa sempre
+      console.log("Arquivo não possui endOfToDo.")
+    }
+
     if (line.includes(endOfToDo)) {
       const arrayStringsDoFim = line.match(/\d+/g); //inteiros
       const arrayNumerosDoFim = arrayStringsDoFim.map(Number);
@@ -155,15 +163,17 @@ function addNovoNivel(lines, numConclusao, numNovaMeta){
       lines[i] = endOfToDo + (arrayNumerosDoFim[0] + numConclusao) + "-" + (arrayNumerosDoFim[1] + numNovaMeta)
       // console.log("depois:", lines[i])
 
-      console.log(JSON.stringify(lines[i-1]))
+      // console.log(JSON.stringify(lines[i-1]))
       // lines[i-1].replace(/\\r/g, ("-" + numConclusao + "-" + numNovaMeta + "-" + '\n'))
       lines[i-1] = lines[i-1].replace('\r', '') + (" -" + numConclusao + "-" + numNovaMeta + "-")
-      console.log(JSON.stringify(lines[i-1]))
+      // console.log(JSON.stringify(lines[i-1]))
 
       addProximoDia(lines, i)
 
       i = -1
     }
+
+    
   }
 }
 
